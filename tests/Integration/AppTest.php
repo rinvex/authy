@@ -39,7 +39,7 @@ class AppTest extends TestCase
     public function it_returns_error_when_wrong_api_provided()
     {
         $authyApp = new AuthyApp($this->http, 'WrongApiKey', 'sandbox');
-        $result = $authyApp->stats();
+        $result   = $authyApp->stats();
 
         $this->assertTrue($result->failed());
         $this->assertNotEmpty($result->errors());

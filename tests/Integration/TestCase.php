@@ -24,8 +24,8 @@ class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        $this->http = new HttpClient();
-        $this->api = static::API_ENDPOINT_SANDBOX.'/protected/json/';
+        $this->http   = new HttpClient();
+        $this->api    = static::API_ENDPOINT_SANDBOX.'/protected/json/';
         $this->params = ['http_errors' => false, 'headers' => ['X-Authy-API-Key' => static::API_KEY_PRODUCTION]];
     }
 }
