@@ -31,7 +31,7 @@ class Token extends Client
     public function send($authyId, $method = 'sms', $force = false, $action = null, $actionMessage = null)
     {
         // Prepare required variables
-        $url = $this->api.$method."/{$authyId}";
+        $url    = $this->api.$method."/{$authyId}";
         $params = $this->params + ['query' => ['force' => (bool) $force, 'action' => $action, 'actionMessage' => $actionMessage]];
 
         // Send Authy token, and return response
@@ -51,7 +51,7 @@ class Token extends Client
     public function verify($token, $authyId, $force = false, $action = null)
     {
         // Prepare required variables
-        $url = $this->api."verify/{$token}/{$authyId}";
+        $url    = $this->api."verify/{$token}/{$authyId}";
         $params = $this->params + ['query' => ['force' => (bool) $force, 'action' => $action]];
 
         // Verify Authy token
