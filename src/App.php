@@ -27,7 +27,7 @@ class App extends Client
     public function stats($ip = null)
     {
         // Prepare required variables
-        $url = $this->api.'app/stats';
+        $url    = $this->api.'app/stats';
         $params = $this->params + ['query' => ['user_ip' => $ip]];
 
         // Return Authy application stats
@@ -44,7 +44,7 @@ class App extends Client
     public function details($ip = null)
     {
         // Prepare required variables
-        $url = $this->api.'app/details';
+        $url    = $this->api.'app/details';
         $params = $this->params + ['query' => ['user_ip' => $ip]];
 
         // Return Authy application stats

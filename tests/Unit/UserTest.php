@@ -34,19 +34,19 @@ class UserTest extends TestCase
     {
         parent::setUp();
 
-        $this->authyUser = new AuthyUser($this->http, static::API_KEY_PRODUCTION);
-        $this->httpResponse = new HttpResponse(200, [], json_encode(['success' => true]));
+        $this->authyUser     = new AuthyUser($this->http, static::API_KEY_PRODUCTION);
+        $this->httpResponse  = new HttpResponse(200, [], json_encode(['success' => true]));
         $this->authyResponse = new AuthyResponse($this->httpResponse);
     }
 
     /** @test */
     public function it_registers_a_user()
     {
-        $url = $this->api.'users/new';
+        $url    = $this->api.'users/new';
         $params = $this->params + [
             'form_params' => [
                 'send_install_link_via_sms' => true,
-                'user' => [
+                'user'                      => [
                     'email'        => 'test@example.com',
                     'cellphone'    => preg_replace('/[^0-9]/', '', '1234567890'),
                     'country_code' => '1',
@@ -61,11 +61,11 @@ class UserTest extends TestCase
     /** @test */
     public function it_prevents_sending_install_link()
     {
-        $url = $this->api.'users/new';
+        $url    = $this->api.'users/new';
         $params = $this->params + [
             'form_params' => [
                 'send_install_link_via_sms' => false,
-                'user' => [
+                'user'                      => [
                     'email'        => 'test@example.com',
                     'cellphone'    => preg_replace('/[^0-9]/', '', '1234567890'),
                     'country_code' => '1',
@@ -80,7 +80,7 @@ class UserTest extends TestCase
     /** @test */
     public function it_deletes_a_user()
     {
-        $url = $this->api."users/{$this->validAuthyId}/delete";
+        $url    = $this->api."users/{$this->validAuthyId}/delete";
         $params = $this->params + ['form_params' => ['ip' => null]];
 
         $this->http->shouldReceive('post')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -90,7 +90,7 @@ class UserTest extends TestCase
     /** @test */
     public function it_deletes_a_user_and_records_user_ip()
     {
-        $url = $this->api."users/{$this->validAuthyId}/delete";
+        $url    = $this->api."users/{$this->validAuthyId}/delete";
         $params = $this->params + ['form_params' => ['ip' => '192.168.10.10']];
 
         $this->http->shouldReceive('post')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -100,7 +100,7 @@ class UserTest extends TestCase
     /** @test */
     public function it_registers_user_activity()
     {
-        $url = $this->api."users/{$this->validAuthyId}/register_activity";
+        $url    = $this->api."users/{$this->validAuthyId}/register_activity";
         $params = $this->params + ['form_params' => ['data' => 'Test Data', 'type' => 'cookie_login', 'user_ip' => null]];
 
         $this->http->shouldReceive('post')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -110,7 +110,7 @@ class UserTest extends TestCase
     /** @test */
     public function it_registers_user_activity_and_records_user_ip()
     {
-        $url = $this->api."users/{$this->validAuthyId}/register_activity";
+        $url    = $this->api."users/{$this->validAuthyId}/register_activity";
         $params = $this->params + ['form_params' => ['data' => 'Test Data', 'type' => 'cookie_login', 'user_ip' => '192.168.10.10']];
 
         $this->http->shouldReceive('post')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -120,7 +120,7 @@ class UserTest extends TestCase
     /** @test */
     public function it_returns_status()
     {
-        $url = $this->api."users/{$this->validAuthyId}/status";
+        $url    = $this->api."users/{$this->validAuthyId}/status";
         $params = $this->params + ['query' => ['user_ip' => null]];
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -130,7 +130,7 @@ class UserTest extends TestCase
     /** @test */
     public function it_returns_status_and_records_user_ip()
     {
-        $url = $this->api."users/{$this->validAuthyId}/status";
+        $url    = $this->api."users/{$this->validAuthyId}/status";
         $params = $this->params + ['query' => ['user_ip' => '192.168.10.10']];
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -140,9 +140,9 @@ class UserTest extends TestCase
     /** @test */
     public function it_returns_errors_array_when_request_fails_and_errors_exists()
     {
-        $url = $this->api."users/{$this->validAuthyId}/status";
-        $params = $this->params + ['query' => ['user_ip' => null]];
-        $httpResponse = new HttpResponse(200, [], json_encode(['success' => false, 'errors' => ['foo' => 'bar']]));
+        $url           = $this->api."users/{$this->validAuthyId}/status";
+        $params        = $this->params + ['query' => ['user_ip' => null]];
+        $httpResponse  = new HttpResponse(200, [], json_encode(['success' => false, 'errors' => ['foo' => 'bar']]));
         $authyResponse = new AuthyResponse($httpResponse);
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($httpResponse);
@@ -152,9 +152,9 @@ class UserTest extends TestCase
     /** @test */
     public function it_returns_empty_errors_array_when_request_success_even_when_errors_exists()
     {
-        $url = $this->api."users/{$this->validAuthyId}/status";
-        $params = $this->params + ['query' => ['user_ip' => null]];
-        $httpResponse = new HttpResponse(200, [], json_encode(['success' => true, 'errors' => ['foo' => 'bar']]));
+        $url           = $this->api."users/{$this->validAuthyId}/status";
+        $params        = $this->params + ['query' => ['user_ip' => null]];
+        $httpResponse  = new HttpResponse(200, [], json_encode(['success' => true, 'errors' => ['foo' => 'bar']]));
         $authyResponse = new AuthyResponse($httpResponse);
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($httpResponse);

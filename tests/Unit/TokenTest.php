@@ -34,15 +34,15 @@ class TokenTest extends TestCase
     {
         parent::setUp();
 
-        $this->authyToken = new AuthyToken($this->http, static::API_KEY_PRODUCTION);
-        $this->httpResponse = new HttpResponse(200, [], json_encode(['success' => true]));
+        $this->authyToken    = new AuthyToken($this->http, static::API_KEY_PRODUCTION);
+        $this->httpResponse  = new HttpResponse(200, [], json_encode(['success' => true]));
         $this->authyResponse = new AuthyResponse($this->httpResponse);
     }
 
     /** @test */
     public function it_defaults_sending_token_as_sms()
     {
-        $url = $this->api."sms/{$this->validAuthyId}";
+        $url    = $this->api."sms/{$this->validAuthyId}";
         $params = $this->params + ['query' => ['force' => false, 'action' => null, 'actionMessage' => null]];
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -52,7 +52,7 @@ class TokenTest extends TestCase
     /** @test */
     public function it_sends_token_as_phone_call()
     {
-        $url = $this->api."call/{$this->validAuthyId}";
+        $url    = $this->api."call/{$this->validAuthyId}";
         $params = $this->params + ['query' => ['force' => false, 'action' => null, 'actionMessage' => null]];
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -62,7 +62,7 @@ class TokenTest extends TestCase
     /** @test */
     public function it_enforces_sending_token_over_cellphone_network()
     {
-        $url = $this->api."sms/{$this->validAuthyId}";
+        $url    = $this->api."sms/{$this->validAuthyId}";
         $params = $this->params + ['query' => ['force' => true, 'action' => null, 'actionMessage' => null]];
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -72,7 +72,7 @@ class TokenTest extends TestCase
     /** @test */
     public function it_sets_action_and_action_message()
     {
-        $url = $this->api."sms/{$this->validAuthyId}";
+        $url    = $this->api."sms/{$this->validAuthyId}";
         $params = $this->params + ['query' => ['force' => false, 'action' => 'login', 'actionMessage' => 'Login Code']];
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -82,7 +82,7 @@ class TokenTest extends TestCase
     /** @test */
     public function it_verifies_token()
     {
-        $url = $this->api."verify/{$this->validToken}/{$this->validAuthyId}";
+        $url    = $this->api."verify/{$this->validToken}/{$this->validAuthyId}";
         $params = $this->params + ['query' => ['force' => false, 'action' => null]];
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -92,7 +92,7 @@ class TokenTest extends TestCase
     /** @test */
     public function it_enforces_token_verification_regardless_registration_completeness()
     {
-        $url = $this->api."verify/{$this->validToken}/{$this->validAuthyId}";
+        $url    = $this->api."verify/{$this->validToken}/{$this->validAuthyId}";
         $params = $this->params + ['query' => ['force' => true, 'action' => null]];
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -102,7 +102,7 @@ class TokenTest extends TestCase
     /** @test */
     public function it_verifies_token_action()
     {
-        $url = $this->api."verify/{$this->validToken}/{$this->validAuthyId}";
+        $url    = $this->api."verify/{$this->validToken}/{$this->validAuthyId}";
         $params = $this->params + ['query' => ['force' => false, 'action' => 'login']];
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -112,9 +112,9 @@ class TokenTest extends TestCase
     /** @test */
     public function it_returns_errors_array_when_request_fails_and_errors_exists()
     {
-        $url = $this->api."sms/{$this->validAuthyId}";
-        $params = $this->params + ['query' => ['force' => false, 'action' => null, 'actionMessage' => null]];
-        $httpResponse = new HttpResponse(200, [], json_encode(['success' => false, 'errors' => ['foo' => 'bar']]));
+        $url           = $this->api."sms/{$this->validAuthyId}";
+        $params        = $this->params + ['query' => ['force' => false, 'action' => null, 'actionMessage' => null]];
+        $httpResponse  = new HttpResponse(200, [], json_encode(['success' => false, 'errors' => ['foo' => 'bar']]));
         $authyResponse = new AuthyResponse($httpResponse);
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($httpResponse);
@@ -126,9 +126,9 @@ class TokenTest extends TestCase
     /** @test */
     public function it_returns_empty_errors_array_when_request_success_even_when_errors_exists()
     {
-        $url = $this->api."sms/{$this->validAuthyId}";
-        $params = $this->params + ['query' => ['force' => false, 'action' => null, 'actionMessage' => null]];
-        $httpResponse = new HttpResponse(200, [], json_encode(['success' => true, 'errors' => ['foo' => 'bar']]));
+        $url           = $this->api."sms/{$this->validAuthyId}";
+        $params        = $this->params + ['query' => ['force' => false, 'action' => null, 'actionMessage' => null]];
+        $httpResponse  = new HttpResponse(200, [], json_encode(['success' => true, 'errors' => ['foo' => 'bar']]));
         $authyResponse = new AuthyResponse($httpResponse);
 
         $this->http->shouldReceive('get')->once()->with($url, $params)->andReturn($httpResponse);
