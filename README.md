@@ -22,6 +22,7 @@
 - [Contributing & Protocols](#contributing--protocols)
 - [Security Vulnerabilities](#security-vulnerabilities)
 - [About Rinvex](#about-rinvex)
+- [Trademarks](#trademarks)
 - [License](#license)
 
 
@@ -29,41 +30,65 @@
 
 Usage is pretty easy and straightforward:
 
-    ```php
-    // Prepare requirements
-    $apiMode = 'production';
-    $apiKey = 'AuthyProductionKeyHere';
-    $httpClient = new \GuzzleHttp\Client();
+### Prepare requirements
 
-    // Create a new Authy app instance and interact with it
-    $authyApp = new \Rinvex\Authy\App($httpClient, $apiKey, $apiMode);
-    $appStats = $authyApp->stats(); // Get app stats
-    $appDetails = $authyApp->details(); // Get app details
+```php
+$apiMode = 'production';
+$apiKey = 'AuthyProductionKeyHere';
+$httpClient = new \GuzzleHttp\Client();
+```
 
-    // Create a new Authy user instance and interact with it
-    $authyUser = new \Rinvex\Authy\User($httpClient, $apiKey, $apiMode);
-    $user = $authyUser->register('user@domain.com', '317-338-9302', '54'); // Register user
-    $userActivity = $authyUser->registerActivity($user->get('user')['id'], 'cookie_login', 'Test Data'); // Register user activity
-    $userStatus = $authyUser->status($user->get('user')['id']); // Get user status
-    $userDeleted = $authyUser->delete($user->get('user')['id']); // Delete user
+### Authy App
 
-    // Create a new Authy token instance and interact with it
-    $authyToken = new \Rinvex\Authy\Token($httpClient, $apiKey, $apiMode);
-    $smsTokenSent = $authyToken->send($user->get('user')['id'], 'sms'); // Send SMS token
-    $callTokenStarted = $authyToken->send($user->get('user')['id'], 'call'); // Start automated call
-    $tokenVerified = $authyToken->verify(54321, $user->get('user')['id']); // Verify token
+Create a new Authy app instance and interact with it:
 
-    // Work with responses
-    $body = $tokenVerified->body(); // Get all response body
-    $code = $tokenVerified->statusCode(); // Get response status code
-    $succeed = $tokenVerified->succeed(); // Check whether respose is a success
-    $failed = $tokenVerified->failed(); // Check whether respose is a failure
-    $message = $tokenVerified->message(); // Get response message
-    $item = $tokenVerified->get('item'); // Get response body item
-    $errors = $tokenVerified->errors(); // Get response errors
-    ```
+```php
+$authyApp = new \Rinvex\Authy\App($httpClient, $apiKey, $apiMode);
 
-    > **Note:** All authy requests returns authy response, with a unified interface for your convenience, so you can interact with all responses the same way as above.
+$appStats = $authyApp->stats(); // Get app stats
+$appDetails = $authyApp->details(); // Get app details
+```
+
+### Authy User
+
+Create a new Authy user instance and interact with it:
+
+```php
+$authyUser = new \Rinvex\Authy\User($httpClient, $apiKey, $apiMode);
+
+$user = $authyUser->register('user@domain.com', '317-338-9302', '54'); // Register user
+$userActivity = $authyUser->registerActivity($user->get('user')['id'], 'cookie_login', 'Test Data'); // Register user activity
+$userStatus = $authyUser->status($user->get('user')['id']); // Get user status
+$userDeleted = $authyUser->delete($user->get('user')['id']); // Delete user
+```
+
+### Authy Token
+
+Create a new Authy token instance and interact with it:
+
+```php
+$authyToken = new \Rinvex\Authy\Token($httpClient, $apiKey, $apiMode);
+
+$smsTokenSent = $authyToken->send($user->get('user')['id'], 'sms'); // Send SMS token
+$callTokenStarted = $authyToken->send($user->get('user')['id'], 'call'); // Start automated call
+$tokenVerified = $authyToken->verify(54321, $user->get('user')['id']); // Verify token
+```
+
+### Intuitive Responses
+
+Work Intuitively with Authy responses:
+
+```php
+$body = $tokenVerified->body(); // Get all response body
+$code = $tokenVerified->statusCode(); // Get response status code
+$succeed = $tokenVerified->succeed(); // Check whether respose is a success
+$failed = $tokenVerified->failed(); // Check whether respose is a failure
+$message = $tokenVerified->message(); // Get response message
+$item = $tokenVerified->get('item'); // Get response body item
+$errors = $tokenVerified->errors(); // Get response errors
+```
+
+> **Note:** All authy requests returns authy response, with a unified interface for your convenience, so you can interact with all responses the same way as above.
 
 
 ## Installation
