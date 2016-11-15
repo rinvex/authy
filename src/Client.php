@@ -37,7 +37,7 @@ class Client
     /**
      * The HTTP client instance.
      *
-     * @var \GuzzleHttp\Client
+     * @var \GuzzleHttp\ClientInterface
      */
     protected $http;
 
@@ -58,13 +58,11 @@ class Client
     /**
      * Create a new Authy client instance.
      *
-     * @param \GuzzleHttp\Client $client
-     * @param string             $key
-     * @param string             $mode
+     * @param \GuzzleHttp\ClientInterface $client
+     * @param string                      $key
+     * @param string                      $mode
      *
      * @throws \Rinvex\Authy\Exceptions\InvalidConfiguration
-     *
-     * @return void
      */
     public function __construct(ClientInterface $client, $key, $mode = 'production', $format = 'json')
     {

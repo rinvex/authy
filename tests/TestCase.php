@@ -32,7 +32,7 @@ class TestCase extends PHPUnit_Framework_TestCase
     /** @var string */
     const API_KEY_SANDBOX = 'd57d919d11e6b221c9bf6f7c882028f9';
 
-    /** @var \GuzzleHttp\Client */
+    /** @var \GuzzleHttp\ClientInterface */
     protected $http;
 
     /** @var array */

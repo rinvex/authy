@@ -30,8 +30,6 @@ class Response
      * Create a new Authy response instance.
      *
      * @param \Psr\Http\Message\ResponseInterface $response
-     *
-     * @return void
      */
     public function __construct(ResponseInterface $httpResponse)
     {
