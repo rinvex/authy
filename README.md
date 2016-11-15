@@ -7,8 +7,9 @@
 [![VersionEye Dependencies](https://img.shields.io/versioneye/d/php/rinvex:authy.svg?label=Dependencies&style=flat-square)](https://www.versioneye.com/php/rinvex:authy/)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/rinvex/authy.svg?label=Scrutinizer&style=flat-square)](https://scrutinizer-ci.com/g/rinvex/authy/)
 [![Code Climate](https://img.shields.io/codeclimate/github/rinvex/authy.svg?label=CodeClimate&style=flat-square)](https://codeclimate.com/github/rinvex/authy)
+[![Travis](https://img.shields.io/travis/rinvex/authy.svg?label=TravisCI&style=flat-square)](https://travis-ci.org/rinvex/authy)
 [![StyleCI](https://styleci.io/repos/73740838/shield)](https://styleci.io/repos/73740838)
-[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/9fb954b8-d059-4198-bab9-8f8acb09ae4a.svg?label=SensioLabs&style=flat-square)](https://insight.sensiolabs.com/projects/9fb954b8-d059-4198-bab9-8f8acb09ae4a)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/287d9498-12cc-4e5f-8d5d-685823ff0347.svg?label=SensioLabs&style=flat-square)](https://insight.sensiolabs.com/projects/287d9498-12cc-4e5f-8d5d-685823ff0347)
 
 ![Rinvex Authy](https://rinvex.com/assets/frontend/layout/img/products/rinvex-authy.png "Rinvex Authy")
 
