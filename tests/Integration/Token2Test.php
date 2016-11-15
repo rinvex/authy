@@ -67,28 +67,29 @@ class Token2Test extends Test2Case
     {
         //$asd = new Response();
         $authyToken = new AuthyToken($this->http, static::API_KEY_SANDBOX, 'sandbox');
-        $result = $authyToken->send($this->validAuthyId);
-        print_r($result->body());
-        echo 'end send valid';
-        $result = $authyToken->send($this->invalidAuthyId);
-        print_r($result->body());
-        echo 'end send invalid';
+        //$result = $authyToken->send($this->validAuthyId);
+        //print_r($result->body());
+        //echo 'end send valid';
+        //$result = $authyToken->send($this->invalidAuthyId);
+        //print_r($result->body());
+        //echo 'end send invalid';
         $result = $authyToken->verify($this->validToken, $this->validAuthyId);
         print_r($result->body());
+        print_r($result->httpResponse);
         echo 'end verify valid';
         $result = $authyToken->verify($this->validToken, $this->invalidAuthyId);
         print_r($result->body());
-        echo 'end send invalid';
+        echo 'end verify invalid';
 
-        $authyAuthy = new \Rinvex\Authy\App($this->http, static::API_KEY_SANDBOX, 'sandbox');
-        print_r($authyAuthy);
-        echo 'end send invalid';
-        $result2 = $authyAuthy->details($authyAuthy);
-        print_r($result2);
-        echo 'end send invalid';
-        $result3 = $authyAuthy->stats($authyAuthy);
-        print_r($result3);
-        echo 'end send invalid';
+        //$authyAuthy = new \Rinvex\Authy\App($this->http, static::API_KEY_SANDBOX, 'sandbox');
+        //print_r($authyAuthy);
+        //echo 'end send invalid';
+        //$result2 = $authyAuthy->details($authyAuthy);
+        //print_r($result2);
+        //echo 'end send invalid';
+        //$result3 = $authyAuthy->stats($authyAuthy);
+        //print_r($result3);
+        //echo 'end send invalid';
 
 
         //print_r(__FUNCTION__);
