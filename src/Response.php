@@ -89,7 +89,7 @@ class Response
      */
     public function succeed()
     {
-        $result = $this->get('success');
+        $result  = $this->get('success');
         $success = ! is_null($result) ? (is_string($result) && $result == 'true') || (is_bool($result) && $result) : false;
 
         return $this->statusCode() == 200 && $success;

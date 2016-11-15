@@ -25,8 +25,8 @@ class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        $this->http = Mockery::mock(HttpClient::class);
-        $this->api = static::API_ENDPOINT_PRODUCTION."/protected/json/";
+        $this->http   = Mockery::mock(HttpClient::class);
+        $this->api    = static::API_ENDPOINT_PRODUCTION.'/protected/json/';
         $this->params = ['http_errors' => false, 'headers' => ['X-Authy-API-Key' => static::API_KEY_PRODUCTION]];
     }
 }
