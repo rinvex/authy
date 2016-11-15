@@ -68,16 +68,16 @@ class Token2Test extends Test2Case
         //$asd = new Response();
         $authyToken = new AuthyToken($this->http, static::API_KEY_SANDBOX, 'sandbox');
         $result = $authyToken->send($this->validAuthyId);
-        print_r($result);
+        print_r($result->body());
         echo 'end send valid';
         $result = $authyToken->send($this->invalidAuthyId);
-        print_r($result);
+        print_r($result->body());
         echo 'end send invalid';
         $result = $authyToken->verify($this->validToken, $this->validAuthyId);
-        print_r($result);
+        print_r($result->body());
         echo 'end verify valid';
         $result = $authyToken->verify($this->validToken, $this->invalidAuthyId);
-        print_r($result);
+        print_r($result->body());
         echo 'end send invalid';
 
         $authyAuthy = new \Rinvex\Authy\App($this->http, static::API_KEY_SANDBOX, 'sandbox');

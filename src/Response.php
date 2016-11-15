@@ -24,7 +24,7 @@ class Response
      *
      * @var \Psr\Http\Message\ResponseInterface
      */
-    public $httpResponse;
+    protected $httpResponse;
 
     /**
      * Create a new Authy response instance.
