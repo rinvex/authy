@@ -40,6 +40,7 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->send($this->validAuthyId);
 
+        print_r(__FUNCTION__);
         print_r($result->body());
 
         $this->assertTrue($result->succeed());
@@ -52,6 +53,9 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->send($this->validAuthyId, 'call');
 
+        print_r(__FUNCTION__);
+        print_r($result->body());
+
         $this->assertTrue($result->succeed());
         $this->assertArrayHasKey('cellphone', $result->body());
         $this->assertContains('Call started', $result->message());
@@ -62,6 +66,7 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->send($this->invalidAuthyId);
 
+        print_r(__FUNCTION__);
         print_r($result->body());
 
         $this->assertTrue($result->failed());
@@ -74,6 +79,7 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->send($this->validAuthyId, 'sms', false, 'login', 'Login Code');
 
+        print_r(__FUNCTION__);
         print_r($result->body());
 
         $this->assertTrue($result->succeed());
@@ -86,6 +92,7 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->verify($this->validToken, $this->validAuthyId);
 
+        print_r(__FUNCTION__);
         print_r($result->body());
 
         $this->assertTrue($result->succeed());
@@ -98,6 +105,7 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->verify($this->validToken, $this->invalidAuthyId);
 
+        print_r(__FUNCTION__);
         print_r($result->body());
 
         $this->assertTrue($result->failed());
@@ -110,6 +118,7 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->verify($this->invalidToken, $this->validAuthyId);
 
+        print_r(__FUNCTION__);
         print_r($result->body());
 
         $this->assertTrue($result->failed());
@@ -123,6 +132,7 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->verify($this->invalidToken, $this->invalidAuthyId);
 
+        print_r(__FUNCTION__);
         print_r($result->body());
 
         $this->assertTrue($result->failed());
