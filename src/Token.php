@@ -34,11 +34,8 @@ class Token extends Client
         $url    = $this->api.$method."/{$authyId}";
         $params = $this->params + ['query' => ['force' => (bool) $force, 'action' => $action, 'actionMessage' => $actionMessage]];
 
-        print_r($url);
-        print_r($params);
         // Send Authy token, and return response
-        return $this->http->get($url, $params);
-        //return new Response($this->http->get($url, $params));
+        return new Response($this->http->get($url, $params));
     }
 
     /**
