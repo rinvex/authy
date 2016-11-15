@@ -40,8 +40,8 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->send($this->validAuthyId);
 
-        print_r(__FUNCTION__);
-        print_r($result->body());
+        //print_r(__FUNCTION__);
+        //print_r($result->body());
 
         $this->assertTrue($result->succeed());
         $this->assertArrayHasKey('cellphone', $result->body());
@@ -53,8 +53,8 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->send($this->validAuthyId, 'call');
 
-        print_r(__FUNCTION__);
-        print_r($result->body());
+        //print_r(__FUNCTION__);
+        //print_r($result->body());
 
         $this->assertTrue($result->succeed());
         $this->assertArrayHasKey('cellphone', $result->body());
@@ -67,6 +67,7 @@ class Token2Test extends Test2Case
         $result = $this->authyToken->send($this->invalidAuthyId);
 
         print_r(__FUNCTION__);
+        print_r($result);
         print_r($result->body());
 
         $this->assertTrue($result->failed());
@@ -79,8 +80,8 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->send($this->validAuthyId, 'sms', false, 'login', 'Login Code');
 
-        print_r(__FUNCTION__);
-        print_r($result->body());
+        //print_r(__FUNCTION__);
+        //print_r($result->body());
 
         $this->assertTrue($result->succeed());
         $this->assertArrayHasKey('cellphone', $result->body());
@@ -92,8 +93,8 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->verify($this->validToken, $this->validAuthyId);
 
-        print_r(__FUNCTION__);
-        print_r($result->body());
+        //print_r(__FUNCTION__);
+        //print_r($result->body());
 
         $this->assertTrue($result->succeed());
         $this->assertContains('is valid', $result->get('token'));
@@ -105,8 +106,8 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->verify($this->validToken, $this->invalidAuthyId);
 
-        print_r(__FUNCTION__);
-        print_r($result->body());
+        //print_r(__FUNCTION__);
+        //print_r($result->body());
 
         $this->assertTrue($result->failed());
         $this->assertNotEmpty($result->errors());
@@ -118,8 +119,8 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->verify($this->invalidToken, $this->validAuthyId);
 
-        print_r(__FUNCTION__);
-        print_r($result->body());
+        //print_r(__FUNCTION__);
+        //print_r($result->body());
 
         $this->assertTrue($result->failed());
         $this->assertNotEmpty($result->errors());
@@ -132,8 +133,8 @@ class Token2Test extends Test2Case
     {
         $result = $this->authyToken->verify($this->invalidToken, $this->invalidAuthyId);
 
-        print_r(__FUNCTION__);
-        print_r($result->body());
+        //print_r(__FUNCTION__);
+        //print_r($result->body());
 
         $this->assertTrue($result->failed());
         $this->assertNotEmpty($result->errors());
