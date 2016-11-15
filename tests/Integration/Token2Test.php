@@ -61,6 +61,7 @@ class Token2Test extends Test2Case
     //    $this->assertContains('Call started', $result->message());
     //}
     //
+
     /** @test */
     public function it_returns_error_when_sending_token_but_user_not_found()
     {
