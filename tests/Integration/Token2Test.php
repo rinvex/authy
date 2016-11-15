@@ -68,16 +68,16 @@ class Token2Test extends Test2Case
         //$asd = new Response();
         $result = $this->authyToken->send($this->invalidAuthyId);
 
-        print_r(__FUNCTION__);
-        print_r($result->httpResponse);
-        print_r($result->body());
-        print_r($result->statusCode());
+        //print_r(__FUNCTION__);
+        //print_r($result->httpResponse);
+        //print_r($result->body());
+        //print_r($result->statusCode());
         //print_r($result->getBody());
         //print_r($result->getStatusCode());
 
-        //$this->assertTrue($result->failed());
-        //$this->assertNotEmpty($result->errors());
-        //$this->assertContains('User not found', $result->message());
+        $this->assertTrue($result->failed());
+        $this->assertNotEmpty($result->errors());
+        $this->assertContains('User not found', $result->message());
     }
 
     ///** @test */
