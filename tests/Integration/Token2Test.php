@@ -62,12 +62,13 @@ class Token2Test extends Test2Case
     //    $this->assertContains('Call started', $result->message());
     //}
     //
+
     /** @test */
     public function it_returns_error_when_sending_token_but_user_not_found()
     {
         //$asd = new Response();
         $authyToken = new AuthyToken($this->http, static::API_KEY_SANDBOX, 'sandbox');
-        $result = $authyToken->send($this->validAuthyId);
+        $result     = $authyToken->send($this->validAuthyId);
         print_r($result);
         echo 'end send valid';
         $result = $authyToken->send($this->invalidAuthyId);
