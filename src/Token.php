@@ -35,7 +35,8 @@ class Token extends Client
         $params = $this->params + ['query' => ['force' => (bool) $force, 'action' => $action, 'actionMessage' => $actionMessage]];
 
         // Send Authy token, and return response
-        return new Response($this->http->get($url, $params));
+        return $this->http->get($url, $params);
+        //return new Response($this->http->get($url, $params));
     }
 
     /**
