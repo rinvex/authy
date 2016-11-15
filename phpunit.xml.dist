@@ -16,9 +16,6 @@
         <testsuite name="Rinvex Authy Unit Test Suite">
             <directory>tests/Unit</directory>
         </testsuite>
-        <testsuite name="Rinvex Authy Integration Test Suite">
-            <directory>tests/Integration</directory>
-        </testsuite>
     </testsuites>
     <filter>
         <whitelist>
