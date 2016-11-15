@@ -69,6 +69,7 @@ class Token2Test extends Test2Case
         $result = $this->authyToken->send($this->invalidAuthyId);
 
         print_r(__FUNCTION__);
+        print_r($result->httpResponse);
         print_r($result->body());
         print_r($result->statusCode());
         //print_r($result->getBody());
