@@ -17,7 +17,7 @@ namespace Rinvex\Authy\Test\Integration;
 
 use Rinvex\Authy\App as AuthyApp;
 
-class AppTest extends TestCase
+class App2Test extends Test2Case
 {
     /** @var \Rinvex\Authy\App */
     protected $authyApp;

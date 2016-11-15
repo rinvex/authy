@@ -17,7 +17,7 @@ namespace Rinvex\Authy\Test\Integration;
 
 use Rinvex\Authy\Token as AuthyToken;
 
-class TokenTest extends TestCase
+class Token2Test extends Test2Case
 {
     /** @var \Rinvex\Authy\Token */
     protected $authyToken;
@@ -40,6 +40,8 @@ class TokenTest extends TestCase
     {
         $result = $this->authyToken->send($this->validAuthyId);
 
+        print_r($result->body());
+
         $this->assertTrue($result->succeed());
         $this->assertArrayHasKey('cellphone', $result->body());
         $this->assertContains('Token was sent', $result->message());
@@ -60,6 +62,8 @@ class TokenTest extends TestCase
     {
         $result = $this->authyToken->send($this->invalidAuthyId);
 
+        print_r($result->body());
+
         $this->assertTrue($result->failed());
         $this->assertNotEmpty($result->errors());
         $this->assertContains('User not found', $result->message());
@@ -69,6 +73,8 @@ class TokenTest extends TestCase
     public function it_sets_action_and_action_message_when_sending_token()
     {
         $result = $this->authyToken->send($this->validAuthyId, 'sms', false, 'login', 'Login Code');
+
+        print_r($result->body());
 
         $this->assertTrue($result->succeed());
         $this->assertArrayHasKey('cellphone', $result->body());
@@ -80,6 +86,8 @@ class TokenTest extends TestCase
     {
         $result = $this->authyToken->verify($this->validToken, $this->validAuthyId);
 
+        print_r($result->body());
+
         $this->assertTrue($result->succeed());
         $this->assertContains('is valid', $result->get('token'));
         $this->assertContains('Token is valid', $result->message());
@@ -89,6 +97,8 @@ class TokenTest extends TestCase
     public function it_returns_error_when_verifying_token_but_user_not_found()
     {
         $result = $this->authyToken->verify($this->validToken, $this->invalidAuthyId);
+
+        print_r($result->body());
 
         $this->assertTrue($result->failed());
         $this->assertNotEmpty($result->errors());
@@ -100,6 +110,8 @@ class TokenTest extends TestCase
     {
         $result = $this->authyToken->verify($this->invalidToken, $this->validAuthyId);
 
+        print_r($result->body());
+
         $this->assertTrue($result->failed());
         $this->assertNotEmpty($result->errors());
         $this->assertContains('is invalid', $result->get('token'));
@@ -110,6 +122,8 @@ class TokenTest extends TestCase
     public function it_returns_error_when_verifying_token_but_both_user_and_token_are_not_invalid()
     {
         $result = $this->authyToken->verify($this->invalidToken, $this->invalidAuthyId);
+
+        print_r($result->body());
 
         $this->assertTrue($result->failed());
         $this->assertNotEmpty($result->errors());

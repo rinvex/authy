@@ -18,7 +18,7 @@ namespace Rinvex\Authy\Test\Integration;
 use GuzzleHttp\Client as HttpClient;
 use Rinvex\Authy\Test\TestCase as BaseTestCase;
 
-class TestCase extends BaseTestCase
+class Test2Case extends BaseTestCase
 {
     public function setUp()
     {

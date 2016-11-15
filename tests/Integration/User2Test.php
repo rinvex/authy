@@ -17,7 +17,7 @@ namespace Rinvex\Authy\Test\Integration;
 
 use Rinvex\Authy\User as AuthyUser;
 
-class UserTest extends TestCase
+class User2Test extends Test2Case
 {
     /** @var \Rinvex\Authy\User */
     protected $authyUser;
