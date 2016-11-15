@@ -8,7 +8,10 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false">
+         stopOnFailure="false"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutChangesToGlobalState="true"
+         beStrictAboutCoversAnnotation="true">
     <testsuites>
         <testsuite name="Rinvex Authy Unit Test Suite">
             <directory>tests/Unit</directory>
