@@ -39,6 +39,8 @@ $apiKey = 'AuthyProductionKeyHere';
 $httpClient = new \GuzzleHttp\Client();
 ```
 
+> **Note:** make sure to replace `AuthyProductionKeyHere` with your keys from the installation steps.
+
 ### Authy App
 
 Create a new Authy app instance and interact with it:
@@ -99,32 +101,9 @@ $errors = $tokenVerified->errors(); // Get response errors
     composer require rinvex/authy
     ```
 
-2. If you don't have the following lines already, add it to your `config/services.php` file, before the end of the array:
+2. If you haven't already: Register an [Authy](https://www.authy.com) account -> Sign in -> Access [dashboard](https://dashboard.authy.com) -> Create new application -> Copy your API keys (you've two keys, one for production & another for testing/sandbox)
 
-    ```php
-    'authy' => [
-        'mode' => env('AUTHY_MODE'),
-        'keys' => [
-            'production' => env('AUTHY_PRODUCTION_KEY'),
-            'sandbox' => env('AUTHY_SANDBOX_KEY'),
-        ],
-    ],
-    ```
-
-3. If you haven't already: Register an [Authy](https://www.authy.com) account -> Sign in -> Access [dashboard](https://dashboard.authy.com) -> Create new application -> Copy your API keys (you've two keys, one for production & another for testing/sandbox)
-
-4. If you don't have the following lines already, add it to your project's `.env` file, at the end:
-
-    ```ini
-    AUTHY_MODE=production
-    AUTHY_PRODUCTION_KEY=AuthyProductionKeyHere
-    AUTHY_SANDBOX_KEY=AuthySandboxKeyHere
-    ```
-
-    > **Note:** make sure to replace `AuthyProductionKeyHere` & `AuthySandboxKeyHere` with your keys from the previous step.
-
-
-5. Done! You can refer to [Usage](#usage) again.
+3. Done! You can refer to [Usage](#usage) again.
 
 
 ## Changelog
