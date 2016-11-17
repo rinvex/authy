@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## v0.0.5 - 2016-11-17
+- Alias master branch for version stability requirements
+
 ## v0.0.4 - 2016-11-16
 - Fix wrong installation steps
 
