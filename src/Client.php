@@ -67,11 +67,11 @@ class Client
     public function __construct(ClientInterface $client, $key, $mode = 'production', $format = 'json')
     {
         // Prepare required data
-        $this->http   = $client;
-        $format       = $format == 'xml' ? 'xml' : 'json';
+        $this->http = $client;
+        $format = $format == 'xml' ? 'xml' : 'json';
         $this->params = ['http_errors' => false, 'headers' => ['X-Authy-API-Key' => $key]];
-        $base         = $mode == 'sandbox' ? static::API_ENDPOINT_SANDBOX : static::API_ENDPOINT_PRODUCTION;
-        $this->api    = "{$base}/protected/{$format}/";
+        $base = $mode == 'sandbox' ? static::API_ENDPOINT_SANDBOX : static::API_ENDPOINT_PRODUCTION;
+        $this->api = "{$base}/protected/{$format}/";
 
         // Check configuration
         if (! $mode || ! $key) {
