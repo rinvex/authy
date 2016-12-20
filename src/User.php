@@ -30,7 +30,7 @@ class User extends Client
     public function register($email, $cellphone, $countryCode, $sendInstallLink = true)
     {
         // Prepare required variables
-        $url    = $this->api.'users/new';
+        $url = $this->api.'users/new';
         $params = $this->params + [
             'form_params' => [
                 'send_install_link_via_sms' => (bool) $sendInstallLink,
@@ -59,7 +59,7 @@ class User extends Client
     public function registerActivity($authyId, $type, $data, $ip = null)
     {
         // Prepare required variables
-        $url    = $this->api."users/{$authyId}/register_activity";
+        $url = $this->api."users/{$authyId}/register_activity";
         $params = $this->params + ['form_params' => ['type' => $type, 'data' => $data, 'user_ip' => $ip]];
 
         // Register Authy user activity, and return response
@@ -77,7 +77,7 @@ class User extends Client
     public function status($authyId, $ip = null)
     {
         // Prepare required variables
-        $url    = $this->api."users/{$authyId}/status";
+        $url = $this->api."users/{$authyId}/status";
         $params = $this->params + ['query' => ['user_ip' => $ip]];
 
         // Return Authy user status
@@ -95,7 +95,7 @@ class User extends Client
     public function delete($authyId, $ip = null)
     {
         // Prepare required variables
-        $url    = $this->api."users/{$authyId}/delete";
+        $url = $this->api."users/{$authyId}/delete";
         $params = $this->params + ['form_params' => ['ip' => $ip]];
 
         // Delete Authy user, and return response
