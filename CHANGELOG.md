@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## [v2.0.1] - 2016-12-20
+- Add upgrade guide and fix minor typo
+
 ## [v2.0.0] - 2016-12-20
 - Simplify code
 - Drop LTS support
@@ -32,6 +35,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2016-11-15
 - Commit first draft
 
+[v2.0.1]: https://github.com/rinvex/authy/compare/v2.0.0...v2.0.1
 [v2.0.0]: https://github.com/rinvex/authy/compare/v1.0.0...v2.0.0
 [v1.0.0]: https://github.com/rinvex/authy/compare/v0.0.5...v1.0.0
 [v0.0.5]: https://github.com/rinvex/authy/compare/v0.0.4...v0.0.5
