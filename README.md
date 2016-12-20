@@ -18,6 +18,7 @@
 
 - [Usage](#usage)
 - [Installation](#installation)
+- [Upgrade](#upgrade)
 - [Changelog](#changelog)
 - [Support](#support)
 - [Contributing & Protocols](#contributing--protocols)
