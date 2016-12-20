@@ -105,6 +105,13 @@ $errors = $tokenVerified->errors(); // Get response errors
 3. Done! You can refer to [Usage](#usage) again.
 
 
+## Upgrade
+
+- **Upgrading To `v2.x` From `v1.x`**
+
+  API implementation is 100% backword compatible, but sandbox API has been dropped since it's officially deprecated. Also note that PHP7 is now required.
+
+
 ## Changelog
 
 Refer to the [Changelog](CHANGELOG.md) for a full history of the project.
