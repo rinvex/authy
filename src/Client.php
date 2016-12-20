@@ -53,10 +53,10 @@ class Client
     public function __construct(ClientInterface $client, $key, $format = 'json')
     {
         // Prepare required data
-        $this->http   = $client;
-        $format       = $format == 'xml' ? 'xml' : 'json';
+        $this->http = $client;
+        $format = $format == 'xml' ? 'xml' : 'json';
         $this->params = ['http_errors' => false, 'headers' => ['X-Authy-API-Key' => $key]];
-        $this->api    = "https://api.authy.com/protected/{$format}/";
+        $this->api = "https://api.authy.com/protected/{$format}/";
 
         // Check configuration
         if (! $key) {
