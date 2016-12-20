@@ -21,16 +21,7 @@ use PHPUnit_Framework_TestCase;
 class TestCase extends PHPUnit_Framework_TestCase
 {
     /** @var string */
-    const API_ENDPOINT_PRODUCTION = 'https://api.authy.com';
-
-    /** @var string */
-    const API_ENDPOINT_SANDBOX = 'http://sandbox-api.authy.com';
-
-    /** @var string */
-    const API_KEY_PRODUCTION = 'AuthyKey';
-
-    /** @var string */
-    const API_KEY_SANDBOX = 'd57d919d11e6b221c9bf6f7c882028f9';
+    const API_KEY_PRODUCTION = 'AuthySecretKey';
 
     /** @var \GuzzleHttp\ClientInterface */
     protected $http;

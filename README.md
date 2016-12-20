@@ -34,19 +34,18 @@ Usage is pretty easy and straightforward:
 ### Prepare requirements
 
 ```php
-$apiMode = 'production';
-$apiKey = 'AuthyProductionKeyHere';
+$apiKey = 'AuthySecretKey';
 $httpClient = new \GuzzleHttp\Client();
 ```
 
-> **Note:** make sure to replace `AuthyProductionKeyHere` with your keys from the installation steps.
+> **Note:** make sure to replace `AuthySecretKey` with your secret key from the installation steps.
 
 ### Authy App
 
 Create a new Authy app instance and interact with it:
 
 ```php
-$authyApp = new \Rinvex\Authy\App($httpClient, $apiKey, $apiMode);
+$authyApp = new \Rinvex\Authy\App($httpClient, $apiKey);
 
 $appStats = $authyApp->stats(); // Get app stats
 $appDetails = $authyApp->details(); // Get app details
@@ -57,7 +56,7 @@ $appDetails = $authyApp->details(); // Get app details
 Create a new Authy user instance and interact with it:
 
 ```php
-$authyUser = new \Rinvex\Authy\User($httpClient, $apiKey, $apiMode);
+$authyUser = new \Rinvex\Authy\User($httpClient, $apiKey);
 
 $user = $authyUser->register('user@domain.com', '317-338-9302', '54'); // Register user
 $userActivity = $authyUser->registerActivity($user->get('user')['id'], 'cookie_login', 'Test Data'); // Register user activity
@@ -70,7 +69,7 @@ $userDeleted = $authyUser->delete($user->get('user')['id']); // Delete user
 Create a new Authy token instance and interact with it:
 
 ```php
-$authyToken = new \Rinvex\Authy\Token($httpClient, $apiKey, $apiMode);
+$authyToken = new \Rinvex\Authy\Token($httpClient, $apiKey);
 
 $smsTokenSent = $authyToken->send($user->get('user')['id'], 'sms'); // Send SMS token
 $callTokenStarted = $authyToken->send($user->get('user')['id'], 'call'); // Start automated call
@@ -101,7 +100,7 @@ $errors = $tokenVerified->errors(); // Get response errors
     composer require rinvex/authy
     ```
 
-2. If you haven't already: Register an [Authy](https://www.authy.com) account -> Sign in -> Access [dashboard](https://dashboard.authy.com) -> Create new application -> Copy your API keys (you've two keys, one for production & another for testing/sandbox)
+2. If you haven't already: Register an [Authy](https://www.authy.com) account -> Sign in -> Access [dashboard](https://dashboard.authy.com) -> Create new application -> Copy your API Secret key
 
 3. Done! You can refer to [Usage](#usage) again.
 
