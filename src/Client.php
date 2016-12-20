@@ -21,20 +21,6 @@ use Rinvex\Authy\Exceptions\InvalidConfiguration;
 class Client
 {
     /**
-     * The Authy production API endpoint.
-     *
-     * @var string
-     */
-    const API_ENDPOINT_PRODUCTION = 'https://api.authy.com';
-
-    /**
-     * The Authy sandbox API endpoint.
-     *
-     * @var string
-     */
-    const API_ENDPOINT_SANDBOX = 'http://sandbox-api.authy.com';
-
-    /**
      * The HTTP client instance.
      *
      * @var \GuzzleHttp\ClientInterface
@@ -60,21 +46,20 @@ class Client
      *
      * @param \GuzzleHttp\ClientInterface $client
      * @param string                      $key
-     * @param string                      $mode
+     * @param string                      $format
      *
      * @throws \Rinvex\Authy\Exceptions\InvalidConfiguration
      */
-    public function __construct(ClientInterface $client, $key, $mode = 'production', $format = 'json')
+    public function __construct(ClientInterface $client, $key, $format = 'json')
     {
         // Prepare required data
-        $this->http   = $client;
-        $format       = $format == 'xml' ? 'xml' : 'json';
+        $this->http = $client;
+        $format = $format == 'xml' ? 'xml' : 'json';
         $this->params = ['http_errors' => false, 'headers' => ['X-Authy-API-Key' => $key]];
-        $base         = $mode == 'sandbox' ? static::API_ENDPOINT_SANDBOX : static::API_ENDPOINT_PRODUCTION;
-        $this->api    = "{$base}/protected/{$format}/";
+        $this->api = "https://api.authy.com/protected/{$format}/";
 
         // Check configuration
-        if (! $mode || ! $key) {
+        if (! $key) {
             throw InvalidConfiguration::missingCredentials();
         }
     }

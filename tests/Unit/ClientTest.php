@@ -39,17 +39,9 @@ class ClientTest extends TestCase
     }
 
     /** @test */
-    public function it_can_set_api_mode_to_sandbox()
-    {
-        $authy = new AuthyClient($this->http, static::API_KEY_SANDBOX, 'sandbox');
-
-        $this->assertAttributeContains(static::API_ENDPOINT_SANDBOX, 'api', $authy);
-    }
-
-    /** @test */
     public function it_can_set_api_response_format_to_xml()
     {
-        $authy = new AuthyClient($this->http, static::API_KEY_PRODUCTION, 'production', 'xml');
+        $authy = new AuthyClient($this->http, static::API_KEY_PRODUCTION, 'xml');
 
         $this->assertAttributeContains('xml', 'api', $authy);
     }
@@ -57,7 +49,7 @@ class ClientTest extends TestCase
     /** @test */
     public function it_defaults_api_endpoint_mode_to_production()
     {
-        $this->assertAttributeContains(static::API_ENDPOINT_PRODUCTION, 'api', $this->authyClient);
+        $this->assertAttributeContains('https://api.authy.com', 'api', $this->authyClient);
     }
 
     /** @test */

@@ -1,6 +1,6 @@
 # Rinvex Authy
 
-**Rinvex Authy** is a simple wrapper for @Authy TOTP API, the best rated Two-Factor Authentication service for consumers, simplest 2fa Rest API for developers and a strong authentication platform for the enterprise.
+**Rinvex Authy** is a simple wrapper for Authy TOTP API, the best rated Two-Factor Authentication service for consumers, simplest 2fa Rest API for developers and a strong authentication platform for the enterprise.
 
 [![Packagist](https://img.shields.io/packagist/v/rinvex/authy.svg?label=Packagist&style=flat-square)](https://packagist.org/packages/rinvex/authy)
 [![VersionEye Dependencies](https://img.shields.io/versioneye/d/php/rinvex:authy.svg?label=Dependencies&style=flat-square)](https://www.versioneye.com/php/rinvex:authy/)
@@ -34,19 +34,18 @@ Usage is pretty easy and straightforward:
 ### Prepare requirements
 
 ```php
-$apiMode = 'production';
-$apiKey = 'AuthyProductionKeyHere';
+$apiKey = 'AuthySecretKey';
 $httpClient = new \GuzzleHttp\Client();
 ```
 
-> **Note:** make sure to replace `AuthyProductionKeyHere` with your keys from the installation steps.
+> **Note:** make sure to replace `AuthySecretKey` with your secret key from the installation steps.
 
 ### Authy App
 
 Create a new Authy app instance and interact with it:
 
 ```php
-$authyApp = new \Rinvex\Authy\App($httpClient, $apiKey, $apiMode);
+$authyApp = new \Rinvex\Authy\App($httpClient, $apiKey);
 
 $appStats = $authyApp->stats(); // Get app stats
 $appDetails = $authyApp->details(); // Get app details
@@ -57,7 +56,7 @@ $appDetails = $authyApp->details(); // Get app details
 Create a new Authy user instance and interact with it:
 
 ```php
-$authyUser = new \Rinvex\Authy\User($httpClient, $apiKey, $apiMode);
+$authyUser = new \Rinvex\Authy\User($httpClient, $apiKey);
 
 $user = $authyUser->register('user@domain.com', '317-338-9302', '54'); // Register user
 $userActivity = $authyUser->registerActivity($user->get('user')['id'], 'cookie_login', 'Test Data'); // Register user activity
@@ -70,7 +69,7 @@ $userDeleted = $authyUser->delete($user->get('user')['id']); // Delete user
 Create a new Authy token instance and interact with it:
 
 ```php
-$authyToken = new \Rinvex\Authy\Token($httpClient, $apiKey, $apiMode);
+$authyToken = new \Rinvex\Authy\Token($httpClient, $apiKey);
 
 $smsTokenSent = $authyToken->send($user->get('user')['id'], 'sms'); // Send SMS token
 $callTokenStarted = $authyToken->send($user->get('user')['id'], 'call'); // Start automated call
@@ -101,7 +100,7 @@ $errors = $tokenVerified->errors(); // Get response errors
     composer require rinvex/authy
     ```
 
-2. If you haven't already: Register an [Authy](https://www.authy.com) account -> Sign in -> Access [dashboard](https://dashboard.authy.com) -> Create new application -> Copy your API keys (you've two keys, one for production & another for testing/sandbox)
+2. If you haven't already: Register an [Authy](https://www.authy.com) account -> Sign in -> Access [dashboard](https://dashboard.authy.com) -> Create new application -> Copy your API Secret key
 
 3. Done! You can refer to [Usage](#usage) again.
 
@@ -129,11 +128,17 @@ Bug reports, feature requests, and pull requests are very welcome.
 - [Versioning](CONTRIBUTING.md#versioning)
 - [Pull Requests](CONTRIBUTING.md#pull-requests)
 - [Coding Standards](CONTRIBUTING.md#coding-standards)
+- [Feature Requests](CONTRIBUTING.md#feature-requests)
+- [Git Flow](CONTRIBUTING.md#git-flow)
 
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within this project, please send an e-mail to help@rinvex.com. All security vulnerabilities will be promptly addressed.
+We want to ensure that this package is secure for everyone. If you've discovered a security vulnerability in this package, we appreciate your help in disclosing it to us in a [responsible manner](https://en.wikipedia.org/wiki/Responsible_disclosure).
+
+Publicly disclosing a vulnerability can put the entire community at risk. If you've discovered a security concern, please email us at [security@rinvex.com](mailto:security@rinvex.com). We'll work with you to make sure that we understand the scope of the issue, and that we fully address your concern. We consider correspondence sent to [security@rinvex.com](mailto:security@rinvex.com) our highest priority, and work to address any issues that arise as quickly as possible.
+
+After a security vulnerability has been corrected, a security hotfix release will be deployed as soon as possible.
 
 
 ## About Rinvex
@@ -150,4 +155,4 @@ Rinvex is a software solutions startup, specialized in integrated enterprise sol
 
 This software is released under [The MIT License (MIT)](LICENSE).
 
-(c) 2016 Rinvex LLC, Some rights reserved.
+(c) 2016-2017 Rinvex LLC, Some rights reserved.

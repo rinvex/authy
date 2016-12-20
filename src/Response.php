@@ -29,7 +29,7 @@ class Response
     /**
      * Create a new Authy response instance.
      *
-     * @param \Psr\Http\Message\ResponseInterface $response
+     * @param \Psr\Http\Message\ResponseInterface $httpResponse
      */
     public function __construct(ResponseInterface $httpResponse)
     {
@@ -87,10 +87,7 @@ class Response
      */
     public function succeed()
     {
-        $result  = $this->get('success');
-        $success = ! is_null($result) ? (is_string($result) && $result == 'true') || (is_bool($result) && $result) : false;
-
-        return $this->statusCode() == 200 && $success;
+        return $this->statusCode() == 200 && $this->isSuccess($this->get('success'));
     }
 
     /**
@@ -113,5 +110,15 @@ class Response
         $errors = $this->get('errors') ?: [];
 
         return $this->failed() && ! empty($errors) ? $errors : [];
+    }
+
+    /**
+     * Determine if the given result is success.
+     *
+     * @return bool
+     */
+    protected function isSuccess($result)
+    {
+        return ! is_null($result) ? (is_string($result) && $result == 'true') || (is_bool($result) && $result) : false;
     }
 }
