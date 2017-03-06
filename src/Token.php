@@ -32,7 +32,7 @@ class Token extends Client
     {
         // Prepare required variables
         $url = $this->api.$method."/{$authyId}";
-        $params = $this->params + ['query' => ['force' => (bool) $force, 'action' => $action, 'actionMessage' => $actionMessage]];
+        $params = $this->params + ['query' => ['force' => $force ? 'true' : 'false', 'action' => $action, 'actionMessage' => $actionMessage]];
 
         // Send Authy token, and return response
         return new Response($this->http->get($url, $params));
@@ -52,7 +52,7 @@ class Token extends Client
     {
         // Prepare required variables
         $url = $this->api."verify/{$token}/{$authyId}";
-        $params = $this->params + ['query' => ['force' => (bool) $force, 'action' => $action]];
+        $params = $this->params + ['query' => ['force' => $force ? 'true' : 'false', 'action' => $action]];
 
         // Verify Authy token
         return new Response($this->http->get($url, $params));
