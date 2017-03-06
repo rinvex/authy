@@ -13,6 +13,8 @@
  * Link:    https://rinvex.com
  */
 
+declare(strict_types=1);
+
 namespace Rinvex\Authy\Test\Unit;
 
 use PHPUnit_Framework_TestCase;
