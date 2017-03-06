@@ -89,7 +89,7 @@ class Response
      */
     public function succeed()
     {
-        return $this->statusCode() == 200 && $this->isSuccess($this->get('success'));
+        return $this->statusCode() === 200 && $this->isSuccess($this->get('success'));
     }
 
     /**
@@ -121,6 +121,6 @@ class Response
      */
     protected function isSuccess($result)
     {
-        return ! is_null($result) ? (is_string($result) && $result == 'true') || (is_bool($result) && $result) : false;
+        return ! is_null($result) ? (is_string($result) && $result === 'true') || (is_bool($result) && $result) : false;
     }
 }
