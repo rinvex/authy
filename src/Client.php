@@ -13,6 +13,8 @@
  * Link:    https://rinvex.com
  */
 
+declare(strict_types=1);
+
 namespace Rinvex\Authy;
 
 use GuzzleHttp\ClientInterface;
@@ -54,7 +56,7 @@ class Client
     {
         // Prepare required data
         $this->http = $client;
-        $format = $format == 'xml' ? 'xml' : 'json';
+        $format = $format === 'xml' ? 'xml' : 'json';
         $this->params = ['http_errors' => false, 'headers' => ['X-Authy-API-Key' => $key]];
         $this->api = "https://api.authy.com/protected/{$format}/";
 

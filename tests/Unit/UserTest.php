@@ -13,6 +13,8 @@
  * Link:    https://rinvex.com
  */
 
+declare(strict_types=1);
+
 namespace Rinvex\Authy\Test\Unit;
 
 use Rinvex\Authy\User as AuthyUser;
@@ -46,9 +48,9 @@ class UserTest extends TestCase
         $params = $this->params + [
             'form_params' => [
                 'send_install_link_via_sms' => true,
-                'user'                      => [
-                    'email'        => 'test@example.com',
-                    'cellphone'    => preg_replace('/[^0-9]/', '', '1234567890'),
+                'user' => [
+                    'email' => 'test@example.com',
+                    'cellphone' => preg_replace('/[^0-9]/', '', '1234567890'),
                     'country_code' => '1',
                 ],
             ],
@@ -65,9 +67,9 @@ class UserTest extends TestCase
         $params = $this->params + [
             'form_params' => [
                 'send_install_link_via_sms' => false,
-                'user'                      => [
-                    'email'        => 'test@example.com',
-                    'cellphone'    => preg_replace('/[^0-9]/', '', '1234567890'),
+                'user' => [
+                    'email' => 'test@example.com',
+                    'cellphone' => preg_replace('/[^0-9]/', '', '1234567890'),
                     'country_code' => '1',
                 ],
             ],

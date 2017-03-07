@@ -13,6 +13,8 @@
  * Link:    https://rinvex.com
  */
 
+declare(strict_types=1);
+
 namespace Rinvex\Authy;
 
 class User extends Client
@@ -34,9 +36,9 @@ class User extends Client
         $params = $this->params + [
             'form_params' => [
                 'send_install_link_via_sms' => (bool) $sendInstallLink,
-                'user'                      => [
-                    'email'        => $email,
-                    'cellphone'    => preg_replace('/[^0-9]/', '', $cellphone),
+                'user' => [
+                    'email' => $email,
+                    'cellphone' => preg_replace('/[^0-9]/', '', $cellphone),
                     'country_code' => $countryCode,
                 ],
             ],
