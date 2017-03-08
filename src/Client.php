@@ -18,7 +18,6 @@ declare(strict_types=1);
 namespace Rinvex\Authy;
 
 use GuzzleHttp\ClientInterface;
-use Rinvex\Authy\Exceptions\InvalidConfiguration;
 
 class Client
 {
@@ -50,7 +49,7 @@ class Client
      * @param string                      $key
      * @param string                      $format
      *
-     * @throws \Rinvex\Authy\Exceptions\InvalidConfiguration
+     * @throws \Rinvex\Authy\InvalidConfiguration
      */
     public function __construct(ClientInterface $client, $key, $format = 'json')
     {
