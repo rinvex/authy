@@ -15,7 +15,7 @@
 
 declare(strict_types=1);
 
-namespace Rinvex\Authy\Exceptions;
+namespace Rinvex\Authy;
 
 use Exception;
 

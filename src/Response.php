@@ -22,11 +22,18 @@ use Psr\Http\Message\ResponseInterface;
 class Response
 {
     /**
-     * The raw Http response instance.
+     * The Aythy response body content as array.
      *
-     * @var \Psr\Http\Message\ResponseInterface
+     * @var array
      */
-    protected $httpResponse;
+    protected $body;
+
+    /**
+     * The Aythy response status code.
+     *
+     * @var int
+     */
+    protected $status;
 
     /**
      * Create a new Authy response instance.
@@ -35,7 +42,8 @@ class Response
      */
     public function __construct(ResponseInterface $httpResponse)
     {
-        $this->httpResponse = $httpResponse;
+        $this->status = $httpResponse->getStatusCode();
+        $this->body = ($body = (string) $httpResponse->getBody()) ? json_decode($body, true) : null;
     }
 
     /**
@@ -43,19 +51,9 @@ class Response
      *
      * @return int
      */
-    public function statusCode()
+    public function statusCode(): int
     {
-        return $this->httpResponse->getStatusCode();
-    }
-
-    /**
-     * Return Authy response body as array.
-     *
-     * @return array
-     */
-    public function body()
-    {
-        return json_decode($this->httpResponse->getBody(), true) ?: [];
+        return $this->status;
     }
 
     /**
@@ -67,9 +65,7 @@ class Response
      */
     public function get($var)
     {
-        $body = $this->body();
-
-        return isset($body[$var]) ? $body[$var] : null;
+        return $this->body[$var] ?? null;
     }
 
     /**
@@ -87,7 +83,7 @@ class Response
      *
      * @return bool
      */
-    public function succeed()
+    public function succeed(): bool
     {
         return $this->statusCode() === 200 && $this->isSuccess($this->get('success'));
     }
@@ -97,7 +93,7 @@ class Response
      *
      * @return bool
      */
-    public function failed()
+    public function failed(): bool
     {
         return ! $this->succeed();
     }
@@ -119,7 +115,7 @@ class Response
      *
      * @return bool
      */
-    protected function isSuccess($result)
+    protected function isSuccess($result): bool
     {
         return ! is_null($result) ? (is_string($result) && $result === 'true') || (is_bool($result) && $result) : false;
     }

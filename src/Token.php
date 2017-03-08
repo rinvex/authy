@@ -30,7 +30,7 @@ class Token extends Client
      *
      * @return \Rinvex\Authy\Response
      */
-    public function send($authyId, $method = 'sms', $force = false, $action = null, $actionMessage = null)
+    public function send($authyId, $method = 'sms', $force = false, $action = null, $actionMessage = null): Response
     {
         // Prepare required variables
         $url = $this->api.$method."/{$authyId}";
@@ -50,7 +50,7 @@ class Token extends Client
      *
      * @return \Rinvex\Authy\Response
      */
-    public function verify($token, $authyId, $force = false, $action = null)
+    public function verify($token, $authyId, $force = false, $action = null): Response
     {
         // Prepare required variables
         $url = $this->api."verify/{$token}/{$authyId}";

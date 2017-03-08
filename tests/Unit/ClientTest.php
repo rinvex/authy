@@ -17,8 +17,8 @@ declare(strict_types=1);
 
 namespace Rinvex\Authy\Test\Unit;
 
+use Rinvex\Authy\InvalidConfiguration;
 use Rinvex\Authy\Client as AuthyClient;
-use Rinvex\Authy\Exceptions\InvalidConfiguration;
 
 class ClientTest extends TestCase
 {

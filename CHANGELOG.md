@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## [v2.1.1] - 2017-03-08
+- Clean and tweak Authy Response class
+- Fix auth api force query parameter data type
+- Rename InvalidConfiguration namespace
+- Declare functions return types
+
 ## [v2.1.0] - 2017-03-07
 - Pass force flag as string true/false as per Authy API docs
 - Enforce strict type declaration
@@ -40,6 +46,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2016-11-15
 - Commit first draft
 
+[v2.1.1]: https://github.com/rinvex/authy/compare/v2.1.0...v2.1.1
 [v2.1.0]: https://github.com/rinvex/authy/compare/v2.0.1...v2.1.0
 [v2.0.1]: https://github.com/rinvex/authy/compare/v2.0.0...v2.0.1
 [v2.0.0]: https://github.com/rinvex/authy/compare/v1.0.0...v2.0.0
