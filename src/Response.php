@@ -55,6 +55,7 @@ class Response
     {
         return $this->status;
     }
+
     /**
      * Get Authy response body item.
      *
