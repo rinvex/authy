@@ -29,7 +29,7 @@ class User extends Client
      *
      * @return \Rinvex\Authy\Response
      */
-    public function register($email, $cellphone, $countryCode, $sendInstallLink = true)
+    public function register($email, $cellphone, $countryCode, $sendInstallLink = true): Response
     {
         // Prepare required variables
         $url = $this->api.'users/new';
@@ -58,7 +58,7 @@ class User extends Client
      *
      * @return \Rinvex\Authy\Response
      */
-    public function registerActivity($authyId, $type, $data, $ip = null)
+    public function registerActivity($authyId, $type, $data, $ip = null): Response
     {
         // Prepare required variables
         $url = $this->api."users/{$authyId}/register_activity";
@@ -76,7 +76,7 @@ class User extends Client
      *
      * @return \Rinvex\Authy\Response
      */
-    public function status($authyId, $ip = null)
+    public function status($authyId, $ip = null): Response
     {
         // Prepare required variables
         $url = $this->api."users/{$authyId}/status";
@@ -94,7 +94,7 @@ class User extends Client
      *
      * @return \Rinvex\Authy\Response
      */
-    public function delete($authyId, $ip = null)
+    public function delete($authyId, $ip = null): Response
     {
         // Prepare required variables
         $url = $this->api."users/{$authyId}/delete";

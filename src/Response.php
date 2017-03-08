@@ -51,7 +51,7 @@ class Response
      *
      * @return int
      */
-    public function statusCode()
+    public function statusCode(): int
     {
         return $this->status;
     }
@@ -83,7 +83,7 @@ class Response
      *
      * @return bool
      */
-    public function succeed()
+    public function succeed(): bool
     {
         return $this->statusCode() === 200 && $this->isSuccess($this->get('success'));
     }
@@ -93,7 +93,7 @@ class Response
      *
      * @return bool
      */
-    public function failed()
+    public function failed(): bool
     {
         return ! $this->succeed();
     }
@@ -115,7 +115,7 @@ class Response
      *
      * @return bool
      */
-    protected function isSuccess($result)
+    protected function isSuccess($result): bool
     {
         return ! is_null($result) ? (is_string($result) && $result === 'true') || (is_bool($result) && $result) : false;
     }

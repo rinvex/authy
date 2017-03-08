@@ -26,7 +26,7 @@ class App extends Client
      *
      * @return \Rinvex\Authy\Response
      */
-    public function stats($ip = null)
+    public function stats($ip = null): Response
     {
         // Prepare required variables
         $url = $this->api.'app/stats';
@@ -43,7 +43,7 @@ class App extends Client
      *
      * @return \Rinvex\Authy\Response
      */
-    public function details($ip = null)
+    public function details($ip = null): Response
     {
         // Prepare required variables
         $url = $this->api.'app/details';
