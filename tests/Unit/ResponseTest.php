@@ -36,29 +36,6 @@ class ResponseTest extends PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    public function it_returns_body_content_as_array_when_valid()
-    {
-        $httpResponse = new HttpResponse(200, [], json_encode(['key' => 'value']));
-        $authyResponse = new AuthyResponse($httpResponse);
-        $body = $authyResponse->body();
-
-        $this->assertInternalType('array', $body);
-        $this->assertArrayHasKey('key', $body);
-        $this->assertEquals($body['key'], 'value');
-    }
-
-    /** @test */
-    public function it_returns_null_when_body_content_invalid()
-    {
-        $httpResponse = new HttpResponse(200);
-        $authyResponse = new AuthyResponse($httpResponse);
-        $body = $authyResponse->body();
-
-        $this->assertInternalType('array', $body);
-        $this->assertEmpty($body);
-    }
-
-    /** @test */
     public function it_returns_value_when_body_variable_exists()
     {
         $httpResponse = new HttpResponse(200, [], json_encode(['key' => 'value']));
@@ -82,7 +59,7 @@ class ResponseTest extends PHPUnit_Framework_TestCase
         $httpResponse = new HttpResponse(200, [], json_encode(['message' => 'Something']));
         $authyResponse = new AuthyResponse($httpResponse);
 
-        $this->assertContains('Something', $authyResponse->message());
+        $this->assertEquals('Something', $authyResponse->message());
     }
 
     /** @test */

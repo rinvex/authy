@@ -22,11 +22,18 @@ use Psr\Http\Message\ResponseInterface;
 class Response
 {
     /**
-     * The raw Http response instance.
+     * The Aythy response body content as array.
      *
-     * @var \Psr\Http\Message\ResponseInterface
+     * @var array
      */
-    protected $httpResponse;
+    protected $body;
+
+    /**
+     * The Aythy response status code.
+     *
+     * @var int
+     */
+    protected $status;
 
     /**
      * Create a new Authy response instance.
@@ -35,7 +42,8 @@ class Response
      */
     public function __construct(ResponseInterface $httpResponse)
     {
-        $this->httpResponse = $httpResponse;
+        $this->status = $httpResponse->getStatusCode();
+        $this->body = ($body = (string) $httpResponse->getBody()) ? json_decode($body, true) : null;
     }
 
     /**
@@ -45,19 +53,8 @@ class Response
      */
     public function statusCode()
     {
-        return $this->httpResponse->getStatusCode();
+        return $this->status;
     }
-
-    /**
-     * Return Authy response body as array.
-     *
-     * @return array
-     */
-    public function body()
-    {
-        return json_decode($this->httpResponse->getBody(), true) ?: [];
-    }
-
     /**
      * Get Authy response body item.
      *
@@ -67,9 +64,7 @@ class Response
      */
     public function get($var)
     {
-        $body = $this->body();
-
-        return isset($body[$var]) ? $body[$var] : null;
+        return $this->body[$var] ?? null;
     }
 
     /**
