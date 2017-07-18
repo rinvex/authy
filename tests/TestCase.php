@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Rinvex\Authy\Test;
 
 use Mockery;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase as BaseTestCase;
 
-class TestCase extends PHPUnit_Framework_TestCase
+class TestCase extends BaseTestCase
 {
     /** @var string */
     const API_KEY_PRODUCTION = 'AuthySecretKey';

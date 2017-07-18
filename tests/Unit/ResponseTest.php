@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Rinvex\Authy\Test\Unit;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Rinvex\Authy\Response as AuthyResponse;
 use GuzzleHttp\Psr7\Response as HttpResponse;
 
-class ResponseTest extends PHPUnit_Framework_TestCase
+class ResponseTest extends TestCase
 {
     /** @test */
     public function it_returns_http_status_code()
