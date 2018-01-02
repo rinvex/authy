@@ -43,14 +43,13 @@
     ],
     "require": {
         "php": "^7.1.0",
-        "psr/http-message": "^1.0.0",
         "guzzlehttp/guzzle": "^6.0.0",
-        "roave/security-advisories": "dev-master"
+        "psr/http-message": "^1.0.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.0.0",
+        "codedungeon/phpunit-result-printer": "^0.4.0",
         "mockery/mockery": "^0.9.5",
-        "codedungeon/phpunit-result-printer": "^0.4.0"
+        "phpunit/phpunit": "^6.0.0"
     },
     "autoload": {
         "psr-4": {
@@ -66,8 +65,8 @@
         "test": "vendor/bin/phpunit"
     },
     "config": {
-        "preferred-install": "dist",
         "sort-packages": true,
+        "preferred-install": "dist",
         "optimize-autoloader": true
     },
     "extra": {
