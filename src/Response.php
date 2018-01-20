@@ -60,7 +60,7 @@ class Response
      *
      * @return string
      */
-    public function message()
+    public function message(): string
     {
         return $this->get('message');
     }
@@ -90,7 +90,7 @@ class Response
      *
      * @return array
      */
-    public function errors()
+    public function errors(): array
     {
         $errors = $this->get('errors') ?: [];
 
