@@ -44,7 +44,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 - Fix few typos
 
 ## v0.0.1 - 2016-11-15
-- Commit first draft
+- Tag first release
 
 [v2.1.1]: https://github.com/rinvex/authy/compare/v2.1.0...v2.1.1
 [v2.1.0]: https://github.com/rinvex/authy/compare/v2.0.1...v2.1.0
