@@ -1,18 +1,5 @@
 <?php
 
-/*
- * NOTICE OF LICENSE
- *
- * Part of the Rinvex Authy Package.
- *
- * This source file is subject to The MIT License (MIT)
- * that is bundled with this package in the LICENSE file.
- *
- * Package: Rinvex Authy Package
- * License: The MIT License (MIT)
- * Link:    https://rinvex.com
- */
-
 declare(strict_types=1);
 
 namespace Rinvex\Authy;
@@ -73,7 +60,7 @@ class Response
      *
      * @return string
      */
-    public function message()
+    public function message(): string
     {
         return $this->get('message');
     }
@@ -103,7 +90,7 @@ class Response
      *
      * @return array
      */
-    public function errors()
+    public function errors(): array
     {
         $errors = $this->get('errors') ?: [];
 
