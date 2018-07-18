@@ -10,7 +10,7 @@ use Rinvex\Authy\Test\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase
 {
-    public function setUp()
+    protected function setUp()
     {
         parent::setUp();
 
