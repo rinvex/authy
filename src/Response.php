@@ -100,6 +100,8 @@ class Response
     /**
      * Determine if the given result is success.
      *
+     * @param mixed $result
+     *
      * @return bool
      */
     protected function isSuccess($result): bool
