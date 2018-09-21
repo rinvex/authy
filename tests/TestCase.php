@@ -33,7 +33,7 @@ class TestCase extends BaseTestCase
     /** @var int */
     protected $invalidToken = '1234567';
 
-    public function tearDown()
+    protected function tearDown()
     {
         Mockery::close();
         parent::tearDown();

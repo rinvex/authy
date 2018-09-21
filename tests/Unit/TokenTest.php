@@ -19,7 +19,7 @@ class TokenTest extends TestCase
     /** @var \Rinvex\Authy\Response */
     protected $authyResponse;
 
-    public function setUp()
+    protected function setUp()
     {
         parent::setUp();
 
