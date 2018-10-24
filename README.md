@@ -89,7 +89,7 @@ $item = $tokenVerified->get('item'); // Get response body item
 $errors = $tokenVerified->errors(); // Get response errors
 ```
 
-> **Note:** All authy requests returns authy response, with a unified interface for your convenience, so you can interact with all responses the same way as above.
+> **Note:** All authy requests return authy response, with a unified interface for your convenience, so you can interact with all responses the same way as above.
 
 
 ## Installation
@@ -108,7 +108,7 @@ $errors = $tokenVerified->errors(); // Get response errors
 
 - **Upgrading To `v2.x` From `v1.x`**
 
-  API implementation is 100% backword compatible, but sandbox API has been dropped since it's officially deprecated. Also note that PHP7 is now required.
+  API implementation is 100% backward compatible, but sandbox API has been dropped since it's officially deprecated. Also note that PHP7 is now required.
 
 
 ## Changelog
