@@ -12,7 +12,7 @@ class ClientTest extends TestCase
     /** @var \Rinvex\Authy\Client */
     protected $authyClient;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

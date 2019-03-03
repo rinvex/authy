@@ -18,7 +18,7 @@ class ResponseTest extends TestCase
         $httpResponse = new HttpResponse($randomStatusCode);
         $authyResponse = new AuthyResponse($httpResponse);
 
-        $this->assertInternalType('int', $randomStatusCode);
+        $this->assertIsInt($randomStatusCode);
         $this->assertEquals($randomStatusCode, $authyResponse->statusCode());
     }
 
@@ -123,7 +123,7 @@ class ResponseTest extends TestCase
         $errors = $authyResponse->errors();
 
         $this->assertTrue($authyResponse->failed());
-        $this->assertInternalType('array', $errors);
+        $this->assertIsArray($errors);
         $this->assertArrayHasKey('foo', $errors);
     }
 }

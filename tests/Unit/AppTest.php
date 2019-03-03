@@ -19,7 +19,7 @@ class AppTest extends TestCase
     /** @var \Rinvex\Authy\Response */
     protected $authyResponse;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
