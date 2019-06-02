@@ -4,7 +4,6 @@
 
 [![Packagist](https://img.shields.io/packagist/v/rinvex/authy.svg?label=Packagist&style=flat-square)](https://packagist.org/packages/rinvex/authy)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/rinvex/authy.svg?label=Scrutinizer&style=flat-square)](https://scrutinizer-ci.com/g/rinvex/authy/)
-[![Code Climate](https://img.shields.io/codeclimate/github/rinvex/authy.svg?label=CodeClimate&style=flat-square)](https://codeclimate.com/github/rinvex/authy)
 [![Travis](https://img.shields.io/travis/rinvex/authy.svg?label=TravisCI&style=flat-square)](https://travis-ci.org/rinvex/authy)
 [![StyleCI](https://styleci.io/repos/73740838/shield)](https://styleci.io/repos/73740838)
 [![License](https://img.shields.io/packagist/l/rinvex/authy.svg?label=License&style=flat-square)](https://github.com/rinvex/authy/blob/develop/LICENSE)
