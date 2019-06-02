@@ -75,6 +75,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2016-11-15
 - Tag first release
 
+[v4.1.0]: https://github.com/rinvex/authy/compare/v4.0.0...v4.1.0
 [v4.0.0]: https://github.com/rinvex/authy/compare/v3.0.2...v4.0.0
 [v3.0.2]: https://github.com/rinvex/authy/compare/v3.0.1...v3.0.2
 [v3.0.1]: https://github.com/rinvex/authy/compare/v3.0.0...v3.0.1
