@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## [v4.1.1] - 2019-09-24
+- Add missing laravel/helpers composer package
+
 ## [v4.1.0] - 2019-06-02
 - Update composer deps
 - Drop PHP 7.1 travis test
@@ -75,6 +78,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2016-11-15
 - Tag first release
 
+[v4.1.1]: https://github.com/rinvex/authy/compare/v4.1.0...v4.1.1
 [v4.1.0]: https://github.com/rinvex/authy/compare/v4.0.0...v4.1.0
 [v4.0.0]: https://github.com/rinvex/authy/compare/v3.0.2...v4.0.0
 [v3.0.2]: https://github.com/rinvex/authy/compare/v3.0.1...v3.0.2
