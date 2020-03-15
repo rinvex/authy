@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## [v5.0.0] - 2020-03-15
+- Upgrade to Laravel v7.1.x & PHP v7.4.x
+
+## [v4.1.2] - 2019-03-13
+- Tweak TravisCI config
+- Update StyleCI config
+
 ## [v4.1.1] - 2019-09-24
 - Add missing laravel/helpers composer package
 
@@ -78,6 +85,8 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2016-11-15
 - Tag first release
 
+[v5.0.0]: https://github.com/rinvex/authy/compare/v4.1.2...v5.0.0
+[v4.1.2]: https://github.com/rinvex/authy/compare/v4.1.1...v4.1.2
 [v4.1.1]: https://github.com/rinvex/authy/compare/v4.1.0...v4.1.1
 [v4.1.0]: https://github.com/rinvex/authy/compare/v4.0.0...v4.1.0
 [v4.0.0]: https://github.com/rinvex/authy/compare/v3.0.2...v4.0.0
