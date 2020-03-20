@@ -50,7 +50,7 @@
     "require-dev": {
         "codedungeon/phpunit-result-printer": "^0.27.0",
         "laravel/helpers": "^1.2.0",
-        "mockery/mockery": "^0.9.5",
+        "mockery/mockery": "^0.9.5 || ^1.0.0",
         "phpunit/phpunit": "^9.0.0"
     },
     "autoload": {
