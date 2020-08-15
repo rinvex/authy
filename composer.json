@@ -49,7 +49,7 @@
     },
     "require-dev": {
         "codedungeon/phpunit-result-printer": "^0.27.0",
-        "mockery/mockery": "^0.9.5",
+        "mockery/mockery": "^1.4.0",
         "phpunit/phpunit": "^9.0.0"
     },
     "autoload": {
