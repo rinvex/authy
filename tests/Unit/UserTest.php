@@ -69,7 +69,7 @@ class UserTest extends TestCase
     /** @test */
     public function it_deletes_a_user()
     {
-        $url = $this->api."users/{$this->validAuthyId}/delete";
+        $url = $this->api."users/{$this->validAuthyId}/remove";
         $params = $this->params + ['form_params' => ['ip' => null]];
 
         $this->http->shouldReceive('post')->once()->with($url, $params)->andReturn($this->httpResponse);
@@ -79,7 +79,7 @@ class UserTest extends TestCase
     /** @test */
     public function it_deletes_a_user_and_records_user_ip()
     {
-        $url = $this->api."users/{$this->validAuthyId}/delete";
+        $url = $this->api."users/{$this->validAuthyId}/remove";
         $params = $this->params + ['form_params' => ['ip' => '192.168.10.10']];
 
         $this->http->shouldReceive('post')->once()->with($url, $params)->andReturn($this->httpResponse);
