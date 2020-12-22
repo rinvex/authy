@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## [v5.0.2] - 2020-12-22
+- Update composer dependencies
+- Update composer dependency mockery/mockery
+- Drop PHP 7.2 & 7.3 support from travis
+- Remove default indent size config
+
 ## [v5.0.1] - 2020-04-04
 - Drop laravel/helpers usage as it's no longer used
 
@@ -88,6 +94,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2016-11-15
 - Tag first release
 
+[v5.0.2]: https://github.com/rinvex/authy/compare/v5.0.1...v5.0.2
 [v5.0.1]: https://github.com/rinvex/authy/compare/v5.0.0...v5.0.1
 [v5.0.0]: https://github.com/rinvex/authy/compare/v4.1.2...v5.0.0
 [v4.1.2]: https://github.com/rinvex/authy/compare/v4.1.1...v4.1.2
