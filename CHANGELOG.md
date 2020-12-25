@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## [v5.0.3] - 2020-12-25
+- Add support for PHP v8
+
 ## [v5.0.2] - 2020-12-22
 - Update composer dependencies
 - Update composer dependency mockery/mockery
@@ -94,6 +97,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2016-11-15
 - Tag first release
 
+[v5.0.3]: https://github.com/rinvex/authy/compare/v5.0.2...v5.0.3
 [v5.0.2]: https://github.com/rinvex/authy/compare/v5.0.1...v5.0.2
 [v5.0.1]: https://github.com/rinvex/authy/compare/v5.0.0...v5.0.1
 [v5.0.0]: https://github.com/rinvex/authy/compare/v4.1.2...v5.0.0
