@@ -84,7 +84,7 @@ class User extends Client
     public function delete($authyId, $ip = null): Response
     {
         // Prepare required variables
-        $url = $this->api."users/{$authyId}/delete";
+        $url = $this->api."users/{$authyId}/remove";
         $params = $this->params + ['form_params' => ['ip' => $ip]];
 
         // Delete Authy user, and return response
