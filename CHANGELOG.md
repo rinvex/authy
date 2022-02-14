@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## [v6.1.0] - 2022-02-14
+- Update composer dependencies
+
 ## [v6.0.0] - 2021-08-22
 - Drop PHP v7 support, and upgrade rinvex package dependencies to next major version
 - Update composer dependencies
@@ -104,6 +107,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2016-11-15
 - Tag first release
 
+[v6.1.0]: https://github.com/rinvex/authy/compare/v6.0.0...v6.1.0
 [v6.0.0]: https://github.com/rinvex/authy/compare/v5.0.3...v6.0.0
 [v5.0.3]: https://github.com/rinvex/authy/compare/v5.0.2...v5.0.3
 [v5.0.2]: https://github.com/rinvex/authy/compare/v5.0.1...v5.0.2
