@@ -5,9 +5,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## [v7.1.1] - 2023-07-03
+- Update composer dependencies
+
 ## [v7.1.0] - 2023-05-02
-- e383d97: Update composer dependency psr/http-message to v2.0 from v1.0
-- 1dce409: Update phpunit to v10.1 from v9.5
+- Update composer dependency psr/http-message to v2.0 from v1.0
+- Update phpunit to v10.1 from v9.5
 
 ## [v7.0.0] - 2023-01-09
 - Drop PHP v8.0 support and update composer dependencies
@@ -114,6 +117,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2016-11-15
 - Tag first release
 
+[v7.1.1]: https://github.com/rinvex/authy/compare/v7.1.0...v7.1.1
 [v7.1.0]: https://github.com/rinvex/authy/compare/v7.0.0...v7.1.0
 [v7.0.0]: https://github.com/rinvex/authy/compare/v6.1.0...v7.0.0
 [v6.1.0]: https://github.com/rinvex/authy/compare/v6.0.0...v6.1.0
